@@ -1,0 +1,14 @@
+package com.test.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/member/*")
+
+public class MemberController {
+	localhost:8091/member/list.do
+		
+	@RequestMapping("/list.do")
+	
+}
