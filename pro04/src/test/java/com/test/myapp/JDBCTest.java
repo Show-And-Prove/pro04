@@ -1,7 +1,5 @@
 package com.test.myapp;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 public class JDBCTest {
