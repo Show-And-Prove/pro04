@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.test.dto.BoardDTO;
 import com.test.dto.MemberDTO;
 import com.test.service.MemberService;
 
@@ -41,7 +40,6 @@ public class MemberController {
 		MemberDTO dto = memberService.getMember(id);
 		model.addAttribute("dto", dto);
 		return "member/memberDetail"; 
-		
 	}
 	
 	

@@ -23,6 +23,12 @@ public class BoardDAOImpl implements BoardDAO{
 	public BoardDTO boardDetail(int seq) throws Exception {
 		return sqlsession.selectOne("board.boardDetail", seq);
 	}
+
+	@Override
+	public void boardInsert() throws Exception {
+		sqlsession.insert("board.boardInsert");
+	}
+	
 	
 	
 	

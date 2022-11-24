@@ -11,30 +11,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>회원 목록</title>
-<%--     <link rel="stylesheet" href="${path1 }/include/foundation.css">
-    <link rel="stylesheet" href="${path1 }/include/app.css"> --%>
-    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+	<jsp:include page="../include/head.jsp" />
 </head>
 <body>
-	<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
-      <ul class="orbit-container">
-        <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
-        <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
-        <li class="orbit-slide is-active">
-          <img src="https://placehold.it/2000x750">
-        </li>
-        <li class="orbit-slide">
-          <img src="https://placehold.it/2000x750">
-        </li>
-        <li class="orbit-slide">
-          <img src="https://placehold.it/2000x750">
-        </li>
-        <li class="orbit-slide">
-          <img src="https://placehold.it/2000x750">
-        </li>
-      </ul>
-    </div>
-	
+<header class="">
+	<jsp:include page="../include/header.jsp" />
+</header>
 	<div class="row column text-center">
 		<h2>회원목록</h2>
 		<hr>
@@ -68,6 +50,9 @@
     <script>
       $(document).foundation();
     </script>
+    <footer>
+    
+    </footer>
 <%-- 	<script src="${path1 }/include/vendor/jquery.js"></script>
     <script src="${path1 }/include/vendor/what-input.js"></script>
     <script src="${path1 }/include/vendor/foundation.js"></script>

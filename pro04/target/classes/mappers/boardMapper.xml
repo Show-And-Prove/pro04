@@ -9,4 +9,11 @@
 		select * from board where seq = #{seq}
 	</select>
 	
+	<insert id="boardInsert">
+		insert into board ((select nvl(max(seq),0)+1 from board), #{title}, #{content}, admin, default, default)
+	</insert>
+	
+	<delete id="boardDelete">
+		delete from board where seq=#{seq}
+	</delete>
 </mapper>
