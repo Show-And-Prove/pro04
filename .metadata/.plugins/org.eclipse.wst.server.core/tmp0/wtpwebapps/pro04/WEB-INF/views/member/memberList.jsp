@@ -53,7 +53,7 @@
 				<tr>
 					<td>${status.count }</td>
 					<td>${mem.id }</td>
-					<td>${mem.name }</td>
+					<td><a href="/member/getMember.do?id=${mem.id }">${mem.name }</a></td>
 					<td>${mem.regdate }</td>
 					<td>${mem.pt }</td>
 				</tr>

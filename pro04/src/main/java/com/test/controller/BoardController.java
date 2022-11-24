@@ -31,12 +31,10 @@ public class BoardController {
 	}
 	
 	@GetMapping("detail.do")
-	public String boardDetail(@RequestParam("seq") int seq, Model model) throws Exception{
-		
-		
-		
+	public String getBoardDetail(@RequestParam("seq") int seq, Model model) throws Exception {
+		BoardDTO dto = boardService.boardDetail(seq);
+		model.addAttribute("dto", dto);
 		return "board/boardDetail";
-		
 	}
 	
 }
