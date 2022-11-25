@@ -17,39 +17,44 @@
 <header class="">
 	<jsp:include page="../include/header.jsp" />
 </header>
-<div class="container">
-      <h1 class="title">글등록</h1>
-      <form action="${path1 }/boardInsert.do" method="post">
-		<table class="table">
-		   <tbody>
-		    <tr>
-		      <th>제목</th>
-		      <td><input type="text" class="input" maxlength="90" name="title" id="title" placeholder="제목 입력" required /></td>
-		    </tr>
-		    <tr>
-		      <th>내용</th>
-		      <td><textarea rows="8" cols="100" name="content" id="content" class="textarea" required></textarea></td>
-		    </tr>
-		  </tbody>
-		</table>
-		<div class="buttons">
-		  <button type="submit" class="">글 수정</button>
-		  <button type="reset" class="">취소</button>
-		  <a href="${path1 }/boardList.do" class="">목록</a>
-		</div>
-		<div class="button-group">
-  			<a class="button">One</a>
-  			<button type="submit" class="button">Two</button>
-  			<a href="${path1 }/boardList.do" class="button">목록으로</a>
-		</div>
-	  </form>
-    </div>
+<div class="content" id="content">
+	    <div class="row column text-center">
+	      <h2 class="h1">공지사항 글쓰기</h2>
+	      <hr>
+	      <div class="container">
+	      	<form action="${path1 }/board/insert.do" method="post">
+			      <table id="table1">
+			      	<tbody>
+			      		<tr>
+			      			<th style="background-color:#dcdcdc">글 제목</th>
+			      			<td>
+			      				<input type="text" name="title" id="title" placeholder="제목 입력" maxlength="98" required>
+			      			</td>
+			      		</tr>
+			      		<tr>
+			      			<th style="background-color:#dcdcdc">글 내용</th>
+			      			<td>
+			      				<textarea name="content" id="content" placeholder="내용 입력" rows="8" cols="100" maxlength="800" required></textarea>
+			      			</td>
+			      		</tr>
+			      		<tr>
+			      			<td colspan="2">
+			      				<input type="submit" class="submit success button" value="글 등록" >
+			      				<a class="button" href="${path1 }/board/list.do">글 목록</a>
+			      			</td>
+			      		</tr>
+			      	</tbody>
+			      </table>
+			   </form>   
+	      </div>
+	    </div>
+	</div>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
     <script>
       $(document).foundation();
     </script>
-    <footer>
+    <footer id="footer" class="footer-nav row expanded collapse">
     </footer>
 </body>
 </html>

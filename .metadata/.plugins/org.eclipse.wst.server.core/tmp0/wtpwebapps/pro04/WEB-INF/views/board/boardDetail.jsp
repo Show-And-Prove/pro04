@@ -49,6 +49,11 @@
       		</tr>
       	</tbody>
       </table>
+      	<div class="button-group">
+			<a class="button" href="${path1 }/board/list.do">글 목록</a>
+			<a class="button" href="${path1 }/board/delete.do?seq=${dto.seq}">글 삭제</a>
+			<a class="button" href="${path1 }/board/edit.do?seq=${dto.seq}">글 수정</a>
+		</div>
     </div>
 	
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

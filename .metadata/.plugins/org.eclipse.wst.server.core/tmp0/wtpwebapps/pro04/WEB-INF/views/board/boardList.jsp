@@ -40,9 +40,11 @@
       	</c:forEach>	
       	</tbody>
       </table>
-      	<div class="button-group">
-  			<a href="${path1 }/boardInsertForm.do" class="button">글 등록</a>
+<%-- <c:if test='${sid eq "admin"}'>  --%> 
+		<div class="button-group">
+			<a class="button" href="${path1 }/board/insert.do">글쓰기</a>
 		</div>
+<%-- </c:if> --%>
     </div>
 	
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

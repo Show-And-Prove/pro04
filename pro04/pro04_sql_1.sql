@@ -8,6 +8,7 @@ create table board(
 );
 
 
+
 insert into board values(1, '더미글 제목1', '더미글 내용1', 'admin', default, default);
 insert into board values((select nvl(max(seq),0)+1 from board), '더미글 제목2', '더미글 내용2', 'admin', default, default);
 insert into board values((select nvl(max(seq),0)+1 from board), '더미글 제목3', '더미글 내용3', 'admin', default, default);
@@ -24,4 +25,19 @@ select * from board;
 
 commit;
 
+-- 파일 첨부가 가능한 자유게시판
 
+create table free(
+    bno number primary key,
+    title varchar2(100) not null,
+    content varchar2(1000) not null,
+    regdate date default sysdate,
+    id varchar2(20),
+    visited number default 0
+);
+
+commit;
+
+select * from free;
+
+desc free;

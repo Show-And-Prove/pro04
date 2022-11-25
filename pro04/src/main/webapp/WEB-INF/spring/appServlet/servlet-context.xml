@@ -15,7 +15,7 @@
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<!-- 접근 자원에 대한 권한 설정 -->
 	<resources mapping="/resources/**" location="/resources/" />
-	
+	<resources mapping="/data/**" location="/data/" />
 	
 	<resources mapping="/include/**" location="/WEB-INF/views/include" />
 	<resources mapping="/board/**" location="/WEB-INF/views/board" />
@@ -25,7 +25,9 @@
 	<resources mapping="/databank/**" location="/WEB-INF/views/databank" />
 	<resources mapping="/util/**" location="/WEB-INF/views/util" />	
 	<resources mapping="/sample/**" location="/WEB-INF/views/sample" />
-
+	<resources mapping="/check/**" location="/WEB-INF/views/check" />
+	<resources mapping="/user/**" location="/WEB-INF/views/user" />
+	<resources mapping="/free/**" location="/WEB-INF/views/free" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<!-- Resolver에 대한 접두사와 접미사 설정 -->
