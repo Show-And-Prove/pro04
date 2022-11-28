@@ -1,6 +1,0 @@
-package com.test.myapp.mapper;
-
-public interface TimeMapper {
-	
-	@Select("SELECT to_char(SYSDATE, 'YYYY-MM-DD hh:mm:ss') FROM DUAL");
-}

@@ -27,6 +27,10 @@
 			      <table id="table1">
 			      	<tbody>
 			      		<tr>
+			      			<th style="background-color:#dcdcdc">아이디</th>
+			      			<td>
+			      				<input type="text" name="id" id="id" value="${sid }" readonly>
+			      			</td>
 			      			<th style="background-color:#dcdcdc">차량 번호</th>
 			      			<td>
 			      				<input type="text" name="carnum" id="carnum" placeholder="ex)123가1234 - 띄워쓰기 없이 입력 요망" maxlength="30" required>

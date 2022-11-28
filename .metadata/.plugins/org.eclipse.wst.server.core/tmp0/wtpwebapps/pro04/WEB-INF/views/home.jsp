@@ -107,13 +107,65 @@
 					alt="" />
 			</div>
 			<div class="marketing-site-content-section-block">
-				<h3 class="marketing-site-content-section-block-header">Yeti
-					Snowcone Agency</h3>
-				<p class="marketing-site-content-section-block-subheader subheader">Lorem
-					ipsum dolor sit amet, consectetur adipisicing elit. Aperiam omnis,
-					maxime libero natus qui minus!</p>
-				<a href="#" class="round button small">learn more</a>
-			</div>
+          <div class="callout secondary">
+			<c:if test="${!empty msg }">
+			<script>
+			alert("로그인 실패");
+			document.loginForm.userid.focus();
+			</script>
+			</c:if>
+			<c:if test="${empty sid }">
+            <form action="${path1 }/member/loginCheck.do" method="post" name="loginForm">
+              <div class="grid-x">
+                <div class="small-12 cell">
+                  <label>Login ID
+                    <input type="text" name="id" id="id" size="100" class="single100" placeholder="아이디 입력" required>
+                    <!--  pattern="^[a-z0-9]+$"  -->
+                  </label>
+                </div>
+                <div class="small-12 cell">
+                  <label>Login PW
+                    <input type="password" name="pw" id="pw"  class="single100" placeholder="비밀번호 입력" required>
+                    <!--  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  -->
+                  </label>
+                  <button type="submit" class="button">LOGIN</button>
+                  <a href="${path2 }/member/agree.do" class="button" style="float:right;">회원가입</a>
+                </div>
+              </div>
+            </form>
+			<script>
+			function loginFaiure() {
+				alert("로그인 실패");
+			}
+			</script>
+			</c:if>
+			<c:if test="${not empty sid }">
+             <div class="grid-x" style="height:218px">
+                <div class="small-12 cell">
+                  <label><strong>${sid }</strong>님 안녕하세요~!</label>
+                </div>
+                <div class="small-12 cell">
+                  <label>&nbsp;&nbsp;</label>
+                </div>
+                <div class="small-12 cell">
+                  <label>
+                  	<c:set var="now" value="<%=new java.util.Date() %>" />
+                  	<fmt:formatDate value="${now }" pattern="yyyy년 MM월 dd일" type="date"/>
+                  </label>
+                </div>
+                <div class="small-12 cell">
+                  <label><fmt:formatDate value="${now }" pattern="a h:mm" type="date"/></label>
+                </div>
+                <div class="small-12 cell">
+                  <label><span style="display:none">${serverTime }</span></label>
+                </div>
+                <div class="small-12 cell">
+                  <label>&nbsp;</label>
+                </div>
+              </div>
+			</c:if>
+          </div>
+        </div>
 			<div
 				class="marketing-site-content-section-block small-order-2 medium-order-1">
 				<h3 class="marketing-site-content-section-block-header">Yeti
@@ -131,6 +183,7 @@
 			</div>
 		</div>
 	</div>
+	
 	<footer id="footer" class="footer-nav row expanded collapse">
 		<!-- 푸터 부분 인클루드 -->
 		<jsp:include page="include/footer.jsp"></jsp:include>

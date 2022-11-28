@@ -7,6 +7,40 @@ create table board(
     visited number default 0
 );
 
+create table member(
+    id varchar2(20) primary key,
+    pw varchar2(300) not null,
+    name varchar2(50),
+    email varchar2(100) not null,
+    tel varchar2(20) not null,
+    addr1 varchar2(200),
+    addr2 varchar2(100),
+    postcode varchar2(10),
+    regdate date default sysdate,
+    birth date,
+    pt int default 100,
+    visited int default 0
+);
+commit;
+insert into member values('test1', '1234', '테스트', '1@1.com', '010-1111-1111', 'asdf', 'qwer', '12345', default, '10-10-10', default, default);
+
+select * from member;
+
+desc member;
+
+
+-- 기존 member 테이블 이동
+select * from member;
+
+create table mem_dum as select * from member;
+
+select * from mem_dum;
+-- 
+
+
+commit;
+    
+
 
 
 insert into board values(1, '더미글 제목1', '더미글 내용1', 'admin', default, default);
@@ -41,3 +75,7 @@ commit;
 select * from free;
 
 desc free;
+
+
+
+

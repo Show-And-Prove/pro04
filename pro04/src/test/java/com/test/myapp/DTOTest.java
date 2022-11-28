@@ -16,11 +16,15 @@ public class DTOTest {
 		dto.setId("admin");
 		dto.setPw("1234");
 		dto.setName("관리자");
+		dto.setEmail("1@gmail.com");
 		dto.setTel("01012345678");
-		dto.setAddr("경기도");
+		dto.setAddr1("경기도 파주시 가람로");
+		dto.setAddr2("----");
+		dto.setPostcode("12345");
+		dto.setRegdate("2022-11-28");
+		dto.setBirth("1234-56-78");
 		dto.setPt(1);
-		dto.setRegdate("2010-10-10");
-
+		dto.setVisited(0);
 		
 		/*
 		 * 	<root>

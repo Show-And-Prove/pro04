@@ -19,7 +19,7 @@
         <li><a href="${path0 }/member/list.do">회원</a></li>
         <li><a href="${path0 }/free/list.do">자유게시판</a></li>
         <li><a href="${path0 }/parking/list.do">주차</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="${path0 }/member/logout.do">로그아웃</a></li>
         <li>
           <button type="button" class="button hollow topbar-responsive-button">Categories</button>
         </li>

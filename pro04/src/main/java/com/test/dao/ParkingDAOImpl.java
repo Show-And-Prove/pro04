@@ -14,12 +14,12 @@ public class ParkingDAOImpl implements ParkingDAO{
 	@Autowired
 	SqlSession sqlSession;
 
-	@Override	//게시글 리스트
+	@Override	
 	public List<ParkingDTO> parkingList() throws Exception {
 		return sqlSession.selectList("parking.parkingList");
 	}
 
-	@Override	//글 상세
+	@Override	
 	public ParkingDTO parkingDetail(int parkno) throws Exception {
 		return sqlSession.selectOne("parking.parkingDetail", parkno);
 	}
@@ -34,5 +34,12 @@ public class ParkingDAOImpl implements ParkingDAO{
 		sqlSession.delete("parking.carOut", parkno);		
 	}
 
+	
+	//기록남는 출차
+	@Override
+	public void carOut2(ParkingDTO dto) throws Exception {
+		sqlSession.insert("parking.carOut2", dto);
+	}
+	
 	
 }

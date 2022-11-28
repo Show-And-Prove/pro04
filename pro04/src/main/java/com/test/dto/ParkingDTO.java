@@ -9,5 +9,6 @@ public class ParkingDTO {
 	private String carnum;
 	private String intime;
 	private String outtime;
+	private String id;
 	
 }

@@ -1,5 +1,0 @@
-package com.test.myapp.mapper;
-
-public interface TimeMapper {
-
-}

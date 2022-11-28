@@ -1,9 +1,0 @@
-package com.test.controller;
-
-@Controller
-
-
-public class MemberController {
-
-	
-}

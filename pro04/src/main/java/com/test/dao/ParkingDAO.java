@@ -11,4 +11,7 @@ public interface ParkingDAO {
 	public void carIn(ParkingDTO dto) throws Exception;
 	public void carOut(int parkno) throws Exception;
 	
+	public void carOut2(ParkingDTO dto) throws Exception;
+	
+	
 }

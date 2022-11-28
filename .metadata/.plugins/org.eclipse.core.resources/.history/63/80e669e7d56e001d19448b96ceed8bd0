@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="parking">
+
+	<select id="parkingList" resultType="com.test.dto.ParkingDTO">
+		select * from parking
+	</select>
+	
+	<select id="parkingDetail" resultType="com.test.dto.ParkingDTO">
+		select * from parking where parkno = #{parkno}
+	</select>
+	
+	<insert id="carIn">
+		insert into parking(parkno, carnum, intime) values ((select nvl(max(parkno),0)+1 from parking), #{carnum}, default)
+	</insert>
+	
+	<delete id="carOut">
+		delete from parking where parkno = #{parkno}
+	</delete>
+	
+	
+</mapper>

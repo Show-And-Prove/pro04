@@ -25,7 +25,9 @@
       		<tr>
       			<th width="80">번호</th>
       			<th>차량번호</th>
+      			<th>아이디</th>
       			<th>입차시간</th>
+      			<th>출차시간</th>
       		</tr>
       	</thead>
       	<tbody>
@@ -33,7 +35,9 @@
       		<tr>
       			<td>${status.count }</td>
       			<td><a href="${path1 }/parking/detail.do?parkno=${parking.parkno }">${parking.carnum }</a></td>
+      			<td>${parking.id }</td>
       			<td>${parking.intime }</td>
+      			<td>${parking.outtime }</td>
       		</tr>
       	</c:forEach>	
       	</tbody>

@@ -33,6 +33,11 @@ public class ParkingServiceImpl implements ParkingService {
 	public void carOut(int parkno) throws Exception {
 		parkingDAO.carOut(parkno);
 	}
+	
+	@Override
+	public void carOut2(ParkingDTO dto) throws Exception {
+		parkingDAO.carOut2(dto);
+	}
 
 	
 }

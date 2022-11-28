@@ -12,5 +12,8 @@ public interface ParkingService {
 	public void carOut(int parkno) throws Exception;
 	
 	
+	//기록남는 출차 테스트
+	public void carOut2(ParkingDTO dto) throws Exception;
+	//--test
 	
 }

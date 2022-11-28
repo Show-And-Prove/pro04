@@ -11,12 +11,16 @@
 	</select>
 	
 	<insert id="carIn">
-		insert into parking(parkno, carnum, intime) values ((select nvl(max(parkno),0)+1 from parking), #{carnum}, default)
+		insert into parking(parkno, carnum, intime, id) values ((select nvl(max(parkno),0)+1 from parking), #{carnum}, default, #{id})
 	</insert>
 	
 	<delete id="carOut">
 		delete from parking where parkno = #{parkno}
 	</delete>
 	
+	<!-- 리스트에 출차시간 기록 남는 -->
+	<update id="carOut2">
+		update parking set outtime=sysdate where parkno = #{parkno}
+	</update>
 	
 </mapper>

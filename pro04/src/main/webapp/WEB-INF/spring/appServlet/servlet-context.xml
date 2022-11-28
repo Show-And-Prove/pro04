@@ -55,4 +55,28 @@
 	
 	<!-- 트랜잭션 및 DB 패키지 방안 및 각종 로깅과 보안 설정 -->
 	
+	<!-- 인터셉터 : 글쓰기와 같은 회원권한을 가진 경우는 반드시 로그인 페이지를 거쳐서 시도할 것  -->
+	<beans:bean id="sampleInterceptor" class="com.test.util.SampleInterceptor" />
+	<beans:bean id="loginInterceptor" class="com.test.util.LoginCheckInterceptor" />
+	<beans:bean id="adminInterceptor" class="com.test.util.AdminInterceptor" />
+	<interceptors>
+		<interceptor>
+            <mapping path="/free/**" />
+            <beans:ref bean="sampleInterceptor" />
+        </interceptor>
+        <interceptor>
+            <mapping path="/free/write.do" />
+            <mapping path="/free/insert.do" />
+            <mapping path="/free/update.do" />
+            <mapping path="/free/delete.do" />
+            <beans:ref bean="loginInterceptor"/>
+        </interceptor>
+        <interceptor>
+            <mapping path="/board/insert.do"/>
+            <mapping path="/board/update.do"/>
+            <beans:ref bean="adminInterceptor" />
+        </interceptor>
+	</interceptors>
+	
+	
 </beans:beans>
