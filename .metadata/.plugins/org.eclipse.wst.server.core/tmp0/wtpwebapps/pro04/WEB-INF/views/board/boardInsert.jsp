@@ -54,7 +54,8 @@
     <script>
       $(document).foundation();
     </script>
-    <footer id="footer" class="footer-nav row expanded collapse">
+    <footer id="footer">
+    	<jsp:include page="../include/footer.jsp"></jsp:include>
     </footer>
 </body>
 </html>

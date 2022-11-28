@@ -62,7 +62,7 @@
       $(document).foundation();
     </script>
     <footer>
-    
+    <jsp:include page="../include/footer.jsp"></jsp:include>
     </footer>
 </body>
 </html>

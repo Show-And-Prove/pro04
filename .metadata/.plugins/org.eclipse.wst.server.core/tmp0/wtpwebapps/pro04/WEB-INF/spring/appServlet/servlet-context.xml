@@ -28,6 +28,9 @@
 	<resources mapping="/check/**" location="/WEB-INF/views/check" />
 	<resources mapping="/user/**" location="/WEB-INF/views/user" />
 	<resources mapping="/free/**" location="/WEB-INF/views/free" />
+	
+	<!-- test -->
+	<resources mapping="/parking/**" location="/WEB-INF/views/parking" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<!-- Resolver에 대한 접두사와 접미사 설정 -->

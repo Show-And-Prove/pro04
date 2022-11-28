@@ -51,7 +51,7 @@
       $(document).foundation();
     </script>
     <footer>
-    
+    	<jsp:include page="../include/footer.jsp"></jsp:include>
     </footer>
 <%-- 	<script src="${path1 }/include/vendor/jquery.js"></script>
     <script src="${path1 }/include/vendor/what-input.js"></script>
