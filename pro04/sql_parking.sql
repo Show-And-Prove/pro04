@@ -52,3 +52,41 @@ create table free(
     visited number default 0
 );
 
+
+
+create table testpay (
+    testno number primary key,
+    in_time timestamp,
+    out_time timestamp
+);
+
+select (sysdate(YYYY-MM-DD HH:MI:SS) - in_time(YYYY-MM-DD HH:MI:SS)) * 24 * 60 as pay from testpay;
+
+
+select trunc((sysdate - in_time)*24*60, -1) as min from testpay where testno=1; 
+
+select (sysdate - (sysdate-1))*24*60 as min from dual;
+
+-- select to_char(out_time - in_time)*24*60 from testpay where testno=1;
+
+select to_char((to_date(out_time)-to_date(in_time))*24*60) from testpay where testno=1;
+
+SELECT TO_DATE(TO_CHAR(out_time,'YYYYMMDD'),'YYYYMMDD') - TO_DATE(TO_CHAR(in_time,'YYYYMMDD'),'YYYYMMDD')*24*60 FROM testpay where testno=1;
+
+-- select to_char(to_date(out_time - in_time)*24*60) from testpay where testno=1;
+
+
+
+
+select * from testpay;
+--2시간 7분 127분
+
+select sysdate from dual;
+
+select to_char(sysdate - (sysdate-1))*24*60 from dual;
+
+select to_char(to_date(out_time, 'YYYY-MM-DD HH24:MI:SS')-to_date(in_time, 'YYYY-MM-DD HH24:MI:SS'))*24*6 from testpay where testno=1;
+
+select to_char(to_date(out_time) - to_date(in_time))*24*6 from testpay where testno=1;
+
+select to_char(sysdate - (sysdate-1)) from dual;

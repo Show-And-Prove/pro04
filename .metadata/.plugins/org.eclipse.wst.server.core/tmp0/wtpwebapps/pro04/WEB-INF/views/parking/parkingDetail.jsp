@@ -32,20 +32,22 @@
 					</tr>										
 					<tr>
 						<th>차량 번호</th>
-						<td>${dto.carnum }</td>
+						<td>${dto.car_num }</td>
 					</tr>
 					<tr>
 						<th>입차 시간</th>
-						<td>${dto.intime }</td>
+						<td>${dto.in_time }</td>
 					</tr>
 				</tbody>
 			</table>
 			<input type="submit" class="submit success button" value="출차2(update문으로 outtime sysdate로 추가)">
 		</form>
+		<!-- X -->
 		<div class="button-group">
 			<a class="button" href="${path1 }/parking/list.do">주차 목록</a> 
-			<a class="button" href="${path1 }/parking/delete.do?parkno=${dto.parkno}">출차(테이블에서 데이터 삭제)</a>
+			<a class="button" href="${path1 }/parking/delete2.do?parkno=${dto.parkno}">출차(테이블에서 데이터 삭제)</a>
 		</div>
+		<!-- X -->
 	</div>
 
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

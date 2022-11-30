@@ -28,16 +28,20 @@
       			<th>아이디</th>
       			<th>입차시간</th>
       			<th>출차시간</th>
+      			<th>이용시간</th>
+      			<th>결제금액</th>
       		</tr>
       	</thead>
       	<tbody>
       	<c:forEach items="${parkingList }" var="parking" varStatus="status">
       		<tr>
       			<td>${status.count }</td>
-      			<td><a href="${path1 }/parking/detail.do?parkno=${parking.parkno }">${parking.carnum }</a></td>
+      			<td><a href="${path1 }/parking/detail.do?parkno=${parking.parkno }">${parking.car_num }</a></td>
       			<td>${parking.id }</td>
-      			<td>${parking.intime }</td>
-      			<td>${parking.outtime }</td>
+      			<td>${parking.in_time }</td>
+      			<td>${parking.out_time }</td>
+      			<td>${parking.using_time }분</td>	<!-- 분단위 버림처리 -->
+      			<td>${parking.money }</td>
       		</tr>
       	</c:forEach>	
       	</tbody>

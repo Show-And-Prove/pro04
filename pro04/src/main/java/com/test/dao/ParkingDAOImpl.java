@@ -38,7 +38,39 @@ public class ParkingDAOImpl implements ParkingDAO{
 	//기록남는 출차
 	@Override
 	public void carOut2(ParkingDTO dto) throws Exception {
-		sqlSession.insert("parking.carOut2", dto);
+		sqlSession.update("parking.carOut2", dto);
+	}
+	
+	@Override	
+	public ParkingDTO checkInfoForm(int parkno) throws Exception {
+		return sqlSession.selectOne("parking.parkingDetail", parkno);
+	}
+	
+	
+	@Override
+	public void calUsingTime(ParkingDTO dto) throws Exception {
+		sqlSession.update("parking.calUsingTime", dto);
+	}
+	
+	
+	@Override	
+	public ParkingDTO payForm(int parkno) throws Exception {
+		return sqlSession.selectOne("parking.parkingDetail", parkno);
+	}
+	
+	@Override
+	public void pay(ParkingDTO dto) throws Exception {
+		sqlSession.update("parking.pay", dto);
+	}
+	
+	@Override	
+	public ParkingDTO paidForm(int parkno) throws Exception {
+		return sqlSession.selectOne("parking.parkingDetail", parkno);
+	}
+	
+	@Override
+	public void paid(ParkingDTO dto) throws Exception {
+		sqlSession.update("parking.paid", dto);
 	}
 	
 	

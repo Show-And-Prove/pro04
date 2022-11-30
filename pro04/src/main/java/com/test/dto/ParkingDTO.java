@@ -6,9 +6,12 @@ import lombok.Data;
 public class ParkingDTO {
 
 	private int parkno;
-	private String carnum;
-	private String intime;
-	private String outtime;
+	private String car_num;
 	private String id;
+	private String in_time;
+	private String out_time;
+	private int using_time;
+	private int money;
+	private String paid;
 	
 }

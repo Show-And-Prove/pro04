@@ -76,6 +76,82 @@ select * from free;
 
 desc free;
 
+select * from testpay;
+
+select (cast(out_time as date)-cast(in_time as date))*60*24 from testpay where testno=1;
+
+
+
+-- 최종 분단위 버림처리
+select trunc((to_char((cast(out_time as date)-cast(in_time as date))*60*24)),-1) as min_time from testpay where testno=1;
+
+-- trunc((to_char((cast(out_time as date)-cast(in_time as date))*60*24)),-1)
+
+alter table testpay add money number default 0;
+
+commit;
+
+select * from testpay;
+
+desc testpay;
+
+--insert into testpay(money) values(trunc((to_char((cast(out_time as date)-cast(in_time as date))*60*24)),-1)*100);
+
+
+alter table testpay add using_time varchar2(20) default null;
+
+alter table testpay add 
+
+commit;
+
+
+--------
+
+select * from parking;
+
+drop table parking;
+
+commit;
+
+-- 정규화 전 최종
+
+create table parking (
+    parkno number primary key,
+    car_num varchar2(30) not null,
+    id varchar2(30) not null,
+    in_time timestamp default sysdate,
+    out_time timestamp default null,
+    using_time NUMBER(10) default null,
+    money NUMBER(10) default null
+);
+
+insert into parking values(1, '123가1234', 'admin', default, sysdate+1, default, default);
+
+commit;
+
+select * from parking;
+
+update parking set using_time = trunc((to_number((cast(out_time as date)-cast(in_time as date))*60*24)),-1) where parkno=1;
+
+update parking set money = (using_time * 100) where parkno=1;
+
+alter table parking add paid varchar2(5) default 'N';
+
+
+
+select * from parking;
+
+update parking set paid = 'Y' where parkno=1;
+
+select * from parking;
+
+
+
+
+
+commit;
+
+--
 
 
 

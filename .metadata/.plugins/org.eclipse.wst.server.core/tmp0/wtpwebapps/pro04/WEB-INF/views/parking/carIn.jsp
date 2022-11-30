@@ -33,7 +33,7 @@
 			      			</td>
 			      			<th style="background-color:#dcdcdc">차량 번호</th>
 			      			<td>
-			      				<input type="text" name="carnum" id="carnum" placeholder="ex)123가1234 - 띄워쓰기 없이 입력 요망" maxlength="30" required>
+			      				<input type="text" name="car_num" id="car_num" placeholder="ex)123가1234 - 띄워쓰기 없이 입력 요망" maxlength="30" required>
 			      			</td>
 			      		</tr>
 			      		<tr>

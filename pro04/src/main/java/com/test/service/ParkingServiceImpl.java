@@ -38,6 +38,22 @@ public class ParkingServiceImpl implements ParkingService {
 	public void carOut2(ParkingDTO dto) throws Exception {
 		parkingDAO.carOut2(dto);
 	}
+	
+	
+	@Override
+	public void calUsingTime(ParkingDTO dto) throws Exception {
+		parkingDAO.calUsingTime(dto);
+	}
+	
+	@Override
+	public void pay(ParkingDTO dto) throws Exception {
+		parkingDAO.pay(dto);
+	}
+	
+	@Override
+	public void paid(ParkingDTO dto) throws Exception {
+		parkingDAO.paid(dto);
+	}
 
 	
 }
