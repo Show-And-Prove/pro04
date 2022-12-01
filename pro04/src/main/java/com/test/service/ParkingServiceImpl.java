@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.test.dao.ParkingDAO;
 import com.test.dto.ParkingDTO;
@@ -39,21 +40,17 @@ public class ParkingServiceImpl implements ParkingService {
 		parkingDAO.carOut2(dto);
 	}
 	
-	
 	@Override
-	public void calUsingTime(ParkingDTO dto) throws Exception {
-		parkingDAO.calUsingTime(dto);
+	public void carOut3(ParkingDTO dto) throws Exception {
+		parkingDAO.carOut3(dto);
 	}
 	
-	@Override
-	public void pay(ParkingDTO dto) throws Exception {
-		parkingDAO.pay(dto);
-	}
 	
-	@Override
-	public void paid(ParkingDTO dto) throws Exception {
-		parkingDAO.paid(dto);
-	}
+	
+	
+	  
+	 
+	 
 
 	
 }

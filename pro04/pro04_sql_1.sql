@@ -122,32 +122,72 @@ create table parking (
     in_time timestamp default sysdate,
     out_time timestamp default null,
     using_time NUMBER(10) default null,
-    money NUMBER(10) default null
+    money NUMBER(10) default null,
+    paid varchar2(5) default 'N'
 );
 
-insert into parking values(1, '123가1234', 'admin', default, sysdate+1, default, default);
+
+insert into parking values(1, '123가1234', 'admin', default, default, default, default);
 
 commit;
 
 select * from parking;
 
+update parking set out_time = sysdate where parkno=1;
+
 update parking set using_time = trunc((to_number((cast(out_time as date)-cast(in_time as date))*60*24)),-1) where parkno=1;
 
 update parking set money = (using_time * 100) where parkno=1;
 
-alter table parking add paid varchar2(5) default 'N';
+update parking set paid = 'Y' where parkno=1;
+
+
+insert into parking values(10, '114바 1234', 'admin', default, default, default, default, default);
+insert into parking values(11, '115바 1234', 'admin', default, sysdate+1, default, default, default);
+insert into parking values(12, '116바 1234', 'admin', default, default, default, default, default);
+
+
+update parking 
+    set out_time = sysdate, 
+    using_time = trunc((to_number((sysdate - cast((select in_time from parking where parkno=9) as date))*60*24)),0),
+    money = ((select using_time from parking where parkno=10) * 100)
+where parkno=10;
+
+update parking 
+    set out_time = sysdate, 
+    using_time = trunc((to_number((sysdate - cast((select in_time from parking where parkno=11) as date))*60*24)),-1),
+    money = ((select using_time from parking where parkno=11) * 100)
+where parkno=11;
+
+-- 이용 시간 계산
+update parking 
+    set out_time = sysdate, 
+    using_time = trunc((to_number((sysdate - cast((select in_time from parking where parkno=12) as date))*60*24)),0)
+where parkno=12;
+
+
+-- 결제금액
+update parking
+    set money = (select using_time from parking where parkno=12) * 100
+where parkno=12;
+
+
 
 
 
 select * from parking;
+
+
+
 
 update parking set paid = 'Y' where parkno=1;
 
 select * from parking;
 
 
+commit;
 
-
+delete from parking where parkno<15; 
 
 commit;
 

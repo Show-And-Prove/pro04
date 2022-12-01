@@ -10,16 +10,17 @@ public interface ParkingDAO {
 	public ParkingDTO parkingDetail(int parkno) throws Exception;
 	public void carIn(ParkingDTO dto) throws Exception;
 	public void carOut(int parkno) throws Exception;
-	
+
 	public void carOut2(ParkingDTO dto) throws Exception;
 	
-	public ParkingDTO checkInfoForm(int parkno) throws Exception;
-	public void calUsingTime(ParkingDTO dto) throws Exception;
+	//
+	public void carOut3(ParkingDTO dto) throws Exception;
 	
-	public ParkingDTO payForm(int parkno) throws Exception;
-	public void pay(ParkingDTO dto) throws Exception;
 	
-	public ParkingDTO paidForm(int parkno) throws Exception;
+	
+	
+	public void insertUsing(ParkingDTO dto) throws Exception;
+	public void insertMoney(ParkingDTO dto) throws Exception;
 	public void paid(ParkingDTO dto) throws Exception;
 	
 	

@@ -20,7 +20,7 @@
 	<div class="row column text-center">
 		<h2>주차 상세</h2>
 		<hr>
-		<form action="${path1 }/parking/delete2.do" method="post">
+		<form action="${path1 }/parking/delete3.do" method="post">
 			<table>
 				<tbody>
 					<tr>
@@ -38,14 +38,30 @@
 						<th>입차 시간</th>
 						<td>${dto.in_time }</td>
 					</tr>
+					<tr>
+						<th>출차 시간</th>
+						<td>${dto.out_time }</td>
+					</tr>
+					<tr>
+						<th>이용 시간</th>
+						<td>${dto.using_time }</td>
+					</tr>
+					<tr>
+						<th>요금</th>
+						<td>${dto.money }</td>
+					</tr>
+					<tr>
+						<th>결제여부</th>
+						<td>${dto.paid }</td>
+					</tr>
 				</tbody>
 			</table>
-			<input type="submit" class="submit success button" value="출차2(update문으로 outtime sysdate로 추가)">
+			<input type="submit" class="submit success button" value="출차3(update문으로 outtime sysdate로 추가)">
 		</form>
 		<!-- X -->
 		<div class="button-group">
 			<a class="button" href="${path1 }/parking/list.do">주차 목록</a> 
-			<a class="button" href="${path1 }/parking/delete2.do?parkno=${dto.parkno}">출차(테이블에서 데이터 삭제)</a>
+			<%-- <a class="button" href="${path1 }/parking/ckInfo.do?parkno=${dto.parkno}">정산</a> --%>
 		</div>
 		<!-- X -->
 	</div>

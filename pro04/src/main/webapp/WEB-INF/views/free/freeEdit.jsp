@@ -20,7 +20,6 @@
 		<!-- 헤더 부분 인클루드 -->
 	 	<jsp:include page="../include/header.jsp"></jsp:include>
     </header>
-	
 	<div class="content1" id="content1">
 	    <div class="row column text-center">
 	      <h2 class="h1">자유게시판 글 수정</h2>

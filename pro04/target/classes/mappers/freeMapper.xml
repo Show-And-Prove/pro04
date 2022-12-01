@@ -18,6 +18,6 @@
 	</delete>
 	
 	<update id="freeEdit">
-		update free set title=#{title}, content=#{content} where seq=#{seq}
+		update free set title=#{title}, content=#{content} where bno=#{bno}
 	</update>
 </mapper>
