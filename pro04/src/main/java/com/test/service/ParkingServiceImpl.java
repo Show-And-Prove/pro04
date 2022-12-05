@@ -44,6 +44,17 @@ public class ParkingServiceImpl implements ParkingService {
 	public void carOut3(ParkingDTO dto) throws Exception {
 		parkingDAO.carOut3(dto);
 	}
+
+	@Override
+	public void carOut4(ParkingDTO dto) throws Exception {
+		parkingDAO.carOut4(dto);
+	}
+
+	@Override
+	public void carOut5(ParkingDTO dto) throws Exception {
+		parkingDAO.carOut5(dto);
+		
+	}
 	
 	
 	

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="parking">
+
+	<select id="parkingList" resultType="com.test.dto.ParkingDTO">
+		select * from parking
+	</select>
+	
+	<select id="parkingDetail" resultType="com.test.dto.ParkingDTO">
+		select * from parking where parkno = #{parkno}
+	</select>
+	
+	<insert id="carIn">
+		insert into parking(parkno, car_num, in_time, id) values ((select nvl(max(parkno),0)+1 from parking), #{car_num}, default, #{id})
+	</insert>
+	
+	<!--  -->
+	<!-- 출차 시간 기록 -->
+	<update id="carOut2">
+		update parking set out_time=sysdate where parkno = #{parkno}
+	</update>
+		
+	<!-- 이용시간 계산 -->
+	<update id="calUsingTime">
+		update parking set using_time = trunc((to_number((cast(#{out_time} as date)-cast(#{in_time} as date))*60*24)),-1) where parkno=#{parkno}
+	</update>
+	
+	<update id="carOut3">
+		update parking 
+    		set out_time = sysdate, 
+    		using_time = trunc((to_number((sysdate - cast((select #{in_time} from parking where parkno=#{parkno}) as date))*60*24)),0)
+		where parkno=#{parkno};
+	</update>
+	
+	
+	
+	
+	
+	
+
+	
+	<!-- 요금 계산 (분당 100원) -->
+	<update id="pay">
+		update parking set money = (#{using_time} * 100) where parkno=#{parkno}
+	</update>
+
+	<!-- 결제여부 기록 -->
+	<update id="paid">
+		update parking set paid = 'Y' where parkno=#{parkno} 
+	</update>
+	
+	
+	
+	
+	
+	
+	
+	<!-- 테이블에서 데이터 삭제 -->
+	<delete id="carOut">
+		delete from parking where parkno = #{parkno}
+	</delete>
+	
+</mapper>

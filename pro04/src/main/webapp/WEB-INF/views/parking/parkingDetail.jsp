@@ -56,7 +56,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<input type="submit" class="submit success button" value="출차3(update문으로 outtime sysdate로 추가)">
+			<input type="submit" class="submit success button" value="출차3">
 		</form>
 		<!-- X -->
 		<div class="button-group">

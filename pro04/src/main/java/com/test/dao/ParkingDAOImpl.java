@@ -63,6 +63,19 @@ public class ParkingDAOImpl implements ParkingDAO{
 	public void carOut3(ParkingDTO dto) throws Exception {
 		sqlSession.update("parking.carOut3", dto);
 	}
+
+	@Override
+	public void carOut4(ParkingDTO dto) throws Exception {
+		sqlSession.update("parking.pay", dto);
+	}
+
+	@Override
+	public void carOut5(ParkingDTO dto) throws Exception {
+		sqlSession.update("parking.paid", dto);
+		
+	}
+	
+	
 	
 	
 	

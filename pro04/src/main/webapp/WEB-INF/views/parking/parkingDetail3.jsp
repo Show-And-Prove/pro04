@@ -20,7 +20,7 @@
 	<div class="row column text-center">
 		<h2>주차 상세</h2>
 		<hr>
-		<form action="${path1 }/parking/delete2.do" method="post">
+		<form action="${path1 }/parking/delete5.do" method="post">
 			<table>
 				<tbody>
 					<tr>
@@ -56,7 +56,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<input type="submit" class="submit success button" value="출차2(update문으로 outtime sysdate로 추가)">
+			<input type="submit" class="submit success button" value="출차">
 		</form>
 		<!-- X -->
 		<div class="button-group">

@@ -111,7 +111,7 @@ public class ParkingController {
 		return "redirect:list.do";
 	}
 	
-	@RequestMapping(value="delete3.do", method = RequestMethod.POST)
+	@RequestMapping(value="delete3.do", method = RequestMethod.POST )
 	public ModelAndView carOut3(HttpServletRequest request, ModelAndView mav) throws Exception{
 		
 		//출차시간 기록
@@ -125,8 +125,42 @@ public class ParkingController {
 		parkingService.carOut3(dto);
 		mav.addObject("dto", dto);
 		mav.setViewName("/parking/parkingDetail2");
+		mav.addObject("parkno", parkno);
 		return mav;
 
+	}
+	
+	@RequestMapping(value="delete4.do", method = RequestMethod.POST)
+	public ModelAndView carOut4(HttpServletRequest request, ModelAndView mav) throws Exception{
+
+		int parkno = Integer.parseInt(request.getParameter("parkno"));
+		int using_time = Integer.parseInt(request.getParameter("using_time"));
+		int money = Integer.parseInt(request.getParameter("money"));
+		ParkingDTO dto = new ParkingDTO();
+		
+		dto.setParkno(parkno);
+		dto.setUsing_time(using_time);
+		dto.setMoney(money);
+		parkingService.carOut4(dto);
+		mav.addObject("dto", dto);
+		mav.setViewName("/parking/parkingDetail3");
+		mav.addObject("parkno", parkno);
+		return mav;
+
+	}
+	
+	@RequestMapping(value="delete5.do", method = RequestMethod.POST)
+	public ModelAndView carOut5(HttpServletRequest request, ModelAndView mav) throws Exception{
+
+		int parkno = Integer.parseInt(request.getParameter("parkno"));
+		ParkingDTO dto = new ParkingDTO();
+		
+		dto.setParkno(parkno);
+		dto.setPaid("paid");
+		parkingService.carOut4(dto);
+		mav.addObject("dto", dto);
+		mav.setViewName("/parking/parkingList");
+		return mav;
 	}
 	
 	

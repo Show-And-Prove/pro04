@@ -15,7 +15,8 @@ public interface ParkingDAO {
 	
 	//
 	public void carOut3(ParkingDTO dto) throws Exception;
-	
+	public void carOut4(ParkingDTO dto) throws Exception;
+	public void carOut5(ParkingDTO dto) throws Exception;
 	
 	
 	

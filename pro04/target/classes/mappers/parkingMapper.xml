@@ -19,6 +19,13 @@
 	<update id="carOut2">
 		update parking set out_time=sysdate where parkno = #{parkno}
 	</update>
+		
+	<!-- 이용시간 계산 -->
+	<update id="calUsingTime">
+		update parking set using_time = trunc((to_number((cast(#{out_time} as date)-cast(#{in_time} as date))*60*24)),-1) where parkno=#{parkno}
+	</update>
+	
+	
 	
 	<update id="carOut3">
 		update parking 
@@ -29,16 +36,6 @@
 	
 	
 	
-	
-	
-	
-	
-	<!-- 이용시간 계산 -->
-	<update id="calUsingTime">
-		update parking set using_time = trunc((to_number((cast(#{out_time} as date)-cast(#{in_time} as date))*60*24)),-1) where parkno=#{parkno}
-	</update>
-	
-	<!-- 요금 계산 (분당 100원) -->
 	<update id="pay">
 		update parking set money = (#{using_time} * 100) where parkno=#{parkno}
 	</update>
