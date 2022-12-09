@@ -9,20 +9,19 @@
 
 <nav class="top-bar topbar-responsive">
   <div class="top-bar-title">
-    <a class="topbar-responsive-logo" href="/"><strong>Site Title</strong></a>
+    <a class="topbar-responsive-logo" href="/"><img src="https://www.ktng.com/resources/_img/main_new/img-main-logo.png" alt="logo"></a>
   </div>
   <div id="topbar-responsive" class="topbar-responsive-links">
     <div class="top-bar-right">
       <ul class="menu simple vertical medium-horizontal">
-        <li><a href="/">Home</a></li>
-        <li><a href="${path0 }/board/list.do">공지</a></li>
-        <li><a href="${path0 }/member/list.do">회원</a></li>
-        <li><a href="${path0 }/free/list.do">자유게시판</a></li>
-        <li><a href="${path0 }/parking/list.do">주차</a></li>
+        <li><a href="${path0 }/board/sub.do">기업 소개</a></li>
+        <li><a href="${path0 }/free/list.do">홍보 채널</a></li>
+        <li><a href="${path0 }/board/list.do">공지사항</a></li>
+        <li><a href="${path0 }/member/list.do">회원정보</a></li>
         <li><a href="${path0 }/member/logout.do">로그아웃</a></li>
-        <li>
-          <button type="button" class="button hollow topbar-responsive-button">Categories</button>
-        </li>
+        <!-- test -->
+        <%-- <li><a href="${path0 }/parking/list.do">주차</a></li> --%>
+        <!-- test -->
       </ul>
     </div>
   </div>

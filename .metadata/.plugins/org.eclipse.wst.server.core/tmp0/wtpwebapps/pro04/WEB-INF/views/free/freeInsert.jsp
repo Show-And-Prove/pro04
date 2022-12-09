@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>글등록</title>
+	<title>글 등록</title>
     <jsp:include page="../include/head.jsp" />
     <script type="text/javascript" src="${path1 }/resources/ckeditor/ckeditor.js"></script>
 </head>
@@ -20,7 +20,7 @@
 </header>
 <div class="content1" id="content1">
 	    <div class="row column text-center">
-	      <h2 class="h1">자유게시판 글쓰기</h2>
+	      <h2 class="h1">글 등록</h2>
 	      <hr>
 	      <div class="container">
 	      	<form action="${path1 }/free/insert.do" method="post">

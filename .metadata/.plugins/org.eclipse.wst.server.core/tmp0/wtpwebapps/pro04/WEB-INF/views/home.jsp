@@ -103,8 +103,8 @@
 		<div class="marketing-site-content-section">
 			<div class="marketing-site-content-section-img">
 				<img
-					src="https://images.pexels.com/photos/256046/pexels-photo-256046.jpeg?h=350&auto=compress&cs=tinysrgb"
-					alt="" />
+					src="./resources/img/main_1.png"
+					alt="메인 이미지" />
 			</div>
 			<div class="marketing-site-content-section-block">
           <div class="callout secondary">
@@ -168,18 +168,15 @@
         </div>
 			<div
 				class="marketing-site-content-section-block small-order-2 medium-order-1">
-				<h3 class="marketing-site-content-section-block-header">Yeti
-					Snowcone Agency</h3>
-				<p class="marketing-site-content-section-block-subheader subheader">Lorem
-					ipsum dolor sit amet, consectetur adipisicing elit. Aperiam omnis,
-					maxime libero natus qui minus!</p>
-				<a href="#" class="round button small">learn more</a>
+				<h3 class="marketing-site-content-section-block-header">KT&G, 라오스 교육 인프라 지원 위해 논께오 지역에 초등학교 건립</h3>
+				<p class="marketing-site-content-section-block-subheader subheader">임직원 기부금으로 비용 마련…깜빠네에 이어 논께오에 두 번째 학교 설립</p>
+				<a href="#" class="round button small">자세히 보기</a>
 			</div>
 			<div
 				class="marketing-site-content-section-img small-order-1 medium-order-2">
 				<img
-					src="https://images.pexels.com/photos/300857/pexels-photo-300857.jpeg?h=350&auto=compress&cs=tinysrgb"
-					alt="" />
+					src="https://www.ktng.com/imgViewer?fpath=CM0019&fnm=CM0019_1347_448.jpg"
+					alt="준공식 사진" />
 			</div>
 		</div>
 	</div>

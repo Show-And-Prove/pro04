@@ -33,6 +33,12 @@ public class BoardController {
 		
 	}
 	
+	@GetMapping("sub.do")
+	public String sub(HttpServletRequest request, Model model) throws Exception {
+		return "board/sub";
+	}
+	
+	
 	@GetMapping("detail.do")	//board.detail.do?seq=?
 	public String getBoardDetail(@RequestParam("seq") int seq, Model model) throws Exception {
 		BoardDTO dto = boardService.boardDetail(seq);
