@@ -23,7 +23,7 @@
 	      <h2 class="h1">입차 등록</h2>
 	      <hr>
 	      <div class="container">
-	      	<form action="${path1 }/parking/insert.do" method="post">
+	      	<form action="${path1 }/parking/carIn.do" method="post">
 			      <table id="table1">
 			      	<tbody>
 			      		<tr>

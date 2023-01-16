@@ -107,7 +107,7 @@
 							$("#msg").html("<strong>아이디 입력중입니다.</strong>");
 						} else {
 							$("#msg").html("중복체크하세요.");
-						}
+						} 
 					});
 				});
 				</script>

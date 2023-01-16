@@ -31,6 +31,8 @@
 	
 	<!-- test -->
 	<resources mapping="/parking/**" location="/WEB-INF/views/parking" />
+	<resources mapping="/parking2/**" location="/WEB-INF/views/parking2" />
+	
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<!-- Resolver에 대한 접두사와 접미사 설정 -->
