@@ -15,7 +15,7 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<!-- 데이터베이스 설정 -->
-	<!-- spring-jdbc-5.0.8.RELEASE.jar 안의 드라이버매니저 연결 -->
+	<!-- spring-jdbc-5.0.8.RELEASE.jar 연결 -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 	<!-- 데이터 소스 및 드라이버 설정 : log4jdbc-log4j2-jdbc4-1.16.jar -->
 		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
